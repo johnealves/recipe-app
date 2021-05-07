@@ -1,1 +1,5 @@
-export const SET_EMAIL_LOGIN = 'SET_EMAIL_LOGIN';
+export const SET_PAGETYPE = 'SET_PAGETYPE';
+
+export const RECIPE_FECHING = 'RECIPE_FECHING';
+
+export const SET_RECIPIES = 'SET_RECIPIES';

@@ -1,0 +1,12 @@
+.explore-main-container section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 40vh;
+}
+
+.explore-main-container section button {
+  margin: 0.5rem;
+  width: 10rem;
+}

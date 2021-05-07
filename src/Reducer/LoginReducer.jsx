@@ -1,9 +1,10 @@
-import { SET_EMAIL_LOGIN } from "../action/actionTypes";
+import { SET_EMAIL_LOGIN, SET_VALID_EMAIL } from "../action/actionTypes";
 
 const INITIAL_STATE = {
   emailLogin: '',
+  statusEmail: false,
   passwordLogin: '',
-  disableLogin: true
+  disableLogin: true,
 }
 
 const loginReducer = (state = INITIAL_STATE, action) => {
@@ -13,6 +14,11 @@ const loginReducer = (state = INITIAL_STATE, action) => {
       ...state,
       emailLogin: action.email,
     };
+  case SET_VALID_EMAIL:
+    return {
+      ...state,
+      statusEmail: action.status,
+    }
   default:
     return state;
   }

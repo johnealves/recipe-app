@@ -1,6 +1,8 @@
 .login-container {
   align-items: center;
-  background-color: var(--bs-teal);
+  background-image: url('../images/bluerecipe.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -8,9 +10,18 @@
 }
 
 .login-container h1 {
+  color: #fff;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .login-container .mb-3 {
   max-width: 17rem;
+}
+
+.login-container .icon {
+  font-size: 1.5rem;
+}
+
+.login-container .input-group-text {
+  background-color: #fff;
 }

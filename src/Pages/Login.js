@@ -3,13 +3,11 @@ import React, { useEffect, useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import '../Styles/Login.css';
 import { FormControl, InputGroup } from 'react-bootstrap';
-import { connect } from 'react-redux';
-import { setEmailLogin } from '../action';
+import { AiOutlineUser } from 'react-icons/ai';
+import { GoLock } from 'react-icons/go';
 
-function Login({
-   setEmailLogin,
-   emailLogin,
-  }) {
+function Login() {
+  const [emailLogin, setEmailLogin] = useState('')
   // const [passwordLogin, setPasswordLogin] = useState();
   const [disable, setDisable] = useState(true);
   const [validEmail, setValidEmail] = useState(false);
@@ -18,6 +16,8 @@ function Login({
   function checkValidation() {
     if (validEmail && validPassword) {
       setDisable(false);
+    } else {
+      setDisable(true)
     }
   }
 
@@ -33,6 +33,8 @@ function Login({
     const minLength = 6;
     if (value.length >= minLength) {
       setValidPassword(true);
+    } else {
+      setValidPassword(false);
     }
   }
 
@@ -52,7 +54,7 @@ function Login({
       <h1>Trybe Recipies</h1>
       <InputGroup className="mb-3">
         <InputGroup.Prepend>
-          <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
+          <InputGroup.Text id="basic-addon1"><AiOutlineUser className="icon"/></InputGroup.Text>
         </InputGroup.Prepend>
         <FormControl
           placeholder="Email"
@@ -64,7 +66,7 @@ function Login({
       </InputGroup>
       <InputGroup className="mb-3">
         <InputGroup.Prepend>
-          <InputGroup.Text id="basic-addon2">@</InputGroup.Text>
+          <InputGroup.Text id="basic-addon2"><GoLock className="icon" /></InputGroup.Text>
         </InputGroup.Prepend>
         <FormControl
           type="password"
@@ -77,6 +79,7 @@ function Login({
       </InputGroup>
       <Link to="/comidas">  
         <Button
+          // href="/comidas"
           type="button"
           data-testid="login-submit-btn"
           disabled={ disable }
@@ -89,12 +92,4 @@ function Login({
   );
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  setEmailLogin: (email) => dispatch(setEmailLogin(email))
-})
-
-const mapStateToProps = ({ loginReducer  }) => ({
-  emailLogin: loginReducer.emailLogin,
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default Login;
