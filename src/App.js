@@ -1,24 +1,38 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Route, Switch } from 'react-router';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Login from './Pages/Login';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Switch>
+      <Route exact path="/" component={ Login } />
+      <Route exact path="/comidas" />
+      <Route exact path="/bebidas"  />
+      <Route exact path="/comidas/:id" />
+      <Route exact path="/comidas/:id/in-progress" />
+      <Route exact path="/bebidas/:id" reen />
+      <Route exact path="/bebidas/:id/in-progress" />
+      <Route exact path="/explorar" />
+      <Route exact path="/explorar/:pageType" />
+      <Route
+        exact
+        path="/explorar/:pageType/ingredientes"
+      />
+      <Route
+        exact
+        path="/explorar/comidas/area"
+      />
+      <Route
+        exact
+        path="/explorar/bebidas/area"
+      />
+      <Route exact path="/perfil" />
+      <Route exact path="/receitas-favoritas" />
+      <Route exact path="/receitas-feitas" />
+      {/* <Route component={ NotFound } /> */}
+    </Switch>
   );
 }
 

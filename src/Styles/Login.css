@@ -1,0 +1,16 @@
+.login-container {
+  align-items: center;
+  background-color: var(--bs-teal);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+}
+
+.login-container h1 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.login-container .mb-3 {
+  max-width: 17rem;
+}

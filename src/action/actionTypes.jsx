@@ -1,0 +1,1 @@
+export const SET_EMAIL_LOGIN = 'SET_EMAIL_LOGIN';
