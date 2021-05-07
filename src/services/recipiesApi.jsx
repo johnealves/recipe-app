@@ -1,3 +1,13 @@
+export const searchMealsRecipe = async () => {
+  const response = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=');
+  return await response.json()
+}
+
+export const searchDrinksRecipe = async () => {
+  const response = await fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=');
+  return await response.json()
+}
+
 export const searchByFilter = async (radio, value) => {
   switch (radio) {
   case 'ingredient':

@@ -1,18 +1,25 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
-import { setPageType } from '../action';
+import { setDrinksRecipies, setPageType } from '../action';
+import CardRecipe from '../Components/CardRecipe';
 import Footer from '../Components/Footer';
 import Header from '../Components/Header';
+import '../Styles/mealsScreen.css';
 
-function DrinksScreen({ setPageType, recipies }) {
+function DrinksScreen({ setPageType, recipies, setDrinksRecipies }) {
   useEffect(() => {
-    setPageType('drink')
-  }, [setPageType])
-  if (recipies.length === 1) return <Redirect to={ `/drinks/${ recipies[0].idMeal }` } />;
+    setPageType('drink');
+    setDrinksRecipies();
+  }, [setPageType, setDrinksRecipies])
+  if (recipies.length === 1) return <Redirect to={ `/drinks/${ recipies[0].idDrink }` } />;
   return (
     <div>
       <Header title="Drinks" />
+      <div className="card-recipies-list">
+        { recipies
+          .map((recipe, index) => <CardRecipe recipe={ recipe } index={ index } />)}
+      </div>
       <Footer />
     </div>
   )
@@ -23,7 +30,8 @@ const mapStateToProps = ({ recipeReducer }) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  setPageType: (pageType) => dispatch(setPageType(pageType))
+  setPageType: (pageType) => dispatch(setPageType(pageType)),
+  setDrinksRecipies: () => dispatch(setDrinksRecipies()),
 })
 
 

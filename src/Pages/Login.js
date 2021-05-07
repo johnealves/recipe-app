@@ -46,7 +46,7 @@ function Login() {
     localStorage.setItem('mealsToken', '1');
     localStorage.setItem('cocktailsToken', 1);
     localStorage.setItem('user', JSON.stringify({ email: emailLogin }));
-    <Redirect to="/comidas " />
+    <Redirect to="/foods" />
   }
 
   return (
@@ -77,7 +77,7 @@ function Login() {
           onChange={ handlePassword }
         />
       </InputGroup>
-      <Link to="/comidas">  
+      <Link to="/foods">  
         <Button
           // href="/comidas"
           type="button"

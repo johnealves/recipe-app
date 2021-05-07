@@ -7,7 +7,7 @@ import '../Styles/header.css';
 import SearchBar from './SearchBar';
 
 function Header({ title }) {
-  const [displaySearchBar, setDisplaySearchBar] = useState(true);
+  const [displaySearchBar, setDisplaySearchBar] = useState(false);
 
   function searchBar() {
     setDisplaySearchBar(!displaySearchBar)

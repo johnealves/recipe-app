@@ -14,16 +14,41 @@ const recipeFeching = () => ({
   type: RECIPE_FECHING,
 })
 
-const setRecipies = (recipies) => ({
-  type: SET_RECIPIES,
-  recipies,
-})
+const setRecipies = (recipies) => {
+  if (recipies === null) {
+    alert('no recipes found');
+  } else {
+    return {
+      type: SET_RECIPIES,
+      recipies,
+    }
+  }
+}
+
+export const setMealsRecipies = () => {
+  return (dispatch) => {
+    dispatch(recipeFeching())
+    return api.searchMealsRecipe()
+      .then((response) => dispatch(setRecipies(response.meals)))
+      .catch((error) => console.log(error));
+  }
+}
+
+export const setDrinksRecipies = () => {
+  return (dispatch) => {
+    dispatch(recipeFeching())
+    return api.searchDrinksRecipe()
+      .then((response) => dispatch(setRecipies(response.drinks)))
+      .catch((error) => console.log(error));
+  }
+}
 
 export const searchRecipiesApi = (radio, value) => {
   return (dispatch) => {
     dispatch(recipeFeching())
     return api.searchByFilter(radio, value)
       .then((response) => dispatch(setRecipies(response.meals)))
+      .catch((error) => console.log(error))
   }
 }
 
