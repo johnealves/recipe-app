@@ -7,6 +7,7 @@ import MealsScreen from './Pages/mealsScreen';
 import ProfileScreen from './Pages/ProfileScreen';
 import DrinksScreen from './Pages/drinksScreen';
 import ExploreScreen from './Pages/exploreScreen';
+import MealScreenDetails from './Pages/MealScreenDetails';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <Route exact path="/" component={ Login } />
       <Route exact path="/foods" component={ MealsScreen } />
       <Route exact path="/drinks" component={ DrinksScreen } />
-      <Route exact path="/comidas/:id" />
+      <Route exact path="/foods/:id" component={ MealScreenDetails } />
       <Route exact path="/comidas/:id/in-progress" />
       <Route exact path="/bebidas/:id" reen />
       <Route exact path="/bebidas/:id/in-progress" />

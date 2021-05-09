@@ -18,7 +18,7 @@ function MealsScreen({ setPageType, recipies, setMealsRecipies }) {
       <Header title="Foods" />
       <div className="card-recipies-list">
         { recipies
-          .map((recipe, index) => <CardRecipe recipe={ recipe } index={ index } />)}
+          .map((recipe, index) => <CardRecipe recipe={ recipe } index={ index } key={ index } />)}
       </div>
       <Footer />
     </div>

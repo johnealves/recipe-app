@@ -1,7 +1,7 @@
 import React from 'react';
 // import { useHistory } from 'react-router-dom';
 import Header from '../Components/Header';
-// import Footer from '../../Components/Footer/Footer';
+import Footer from '../Components/Footer';
 
 function ProfileScreen() {
   // const history = useHistory();
@@ -49,7 +49,7 @@ function ProfileScreen() {
           Sair
         </button>
       </section>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

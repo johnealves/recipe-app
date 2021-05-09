@@ -44,3 +44,12 @@ export const searchDrinksByFilter = async (radio, value) => {
     return null;
   }
 }
+
+export const requestMealById = async (id) => {
+  try {
+    const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
+    return await response.json();
+  } catch (error) {
+    console.log(error);
+  }
+}
