@@ -1,5 +1,7 @@
 import { 
   RECIPE_FECHING,
+  SET_DRINKS_CATEGORIES,
+  SET_MEALS_CATEGORIES,
   SET_PAGETYPE,
   SET_RECIPIES,
 } from "./actionTypes";
@@ -14,7 +16,7 @@ const recipeFeching = () => ({
   type: RECIPE_FECHING,
 })
 
-const setRecipies = (recipies) => {
+export const setRecipies = (recipies) => {
   if (recipies === null) {
     alert('no recipes found');
   } else {
@@ -60,3 +62,13 @@ export const searchDrinksApi = (radio, value) => {
       .catch((error) => console.log(error));
   }
 }
+
+export const setMealsCategories = (categories) => ({
+  type: SET_MEALS_CATEGORIES,
+  categories,
+})
+
+export const setDrinksCategories = (categories) => ({
+  type: SET_DRINKS_CATEGORIES,
+  categories,
+})

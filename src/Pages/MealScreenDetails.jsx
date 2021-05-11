@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import IngredientList from '../Components/IngredientList';
 import { requestMealById } from '../services/recipiesApi';
-import '../Styles/mealDetailsScreen.css'
+import '../Styles/recipeDetailsScreen.css'
 
 function MealScreenDetails({ match: { params: { id } } }) {
   const [recipe, setRecipe] = useState({});
@@ -46,7 +46,7 @@ function MealScreenDetails({ match: { params: { id } } }) {
 
         )}
       </div>
-      <h4>Recommended</h4>
+      {/* <h4>Recommended</h4> */}
     </div>
   );
 } 

@@ -1,0 +1,17 @@
+.category-list-container {
+  align-items: center;
+  background-color: burlywood;
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5px 1px;
+}
+
+
+.category-list-container Button {
+  font-size: 0.7rem;
+  flex: 1 1 6rem;
+  margin: 0.1rem;
+  padding: 5px 0;
+}

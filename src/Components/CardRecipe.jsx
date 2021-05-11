@@ -9,7 +9,7 @@ function CardRecipe({ recipe, index, pageType }) {
   return (
     <div>
       { (pageType === 'food' && recipe.strMeal) && (
-        <Link to={ { pathname: `/foods/${recipe.idMeal}` } }>
+        <Link to={ { pathname: `/food/${recipe.idMeal}` } }>
           <Card className="card-recipe-container">
             <Card.Img
               variant="top"
@@ -24,7 +24,7 @@ function CardRecipe({ recipe, index, pageType }) {
         </Link>
       ) }
       {(pageType === 'drink' && recipe.strDrink) && (
-        <Link to={ { pathname: `/bebidas/${recipe.idDrink}`, pageType: 'bebidas' } }>
+        <Link to={ { pathname: `/drink/${recipe.idDrink}`, pageType: 'bebidas' } }>
           <Card className="card-recipe-container">
             <Card.Img
               variant="top"

@@ -1,7 +1,10 @@
 .card-recipies-list {
   align-items: center;
+  background-color: burlywood;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 70px;
+  padding-bottom: 70px;
 }
+
+

@@ -8,6 +8,7 @@ import ProfileScreen from './Pages/ProfileScreen';
 import DrinksScreen from './Pages/drinksScreen';
 import ExploreScreen from './Pages/exploreScreen';
 import MealScreenDetails from './Pages/MealScreenDetails';
+import DrinkScreenDerails from './Pages/DrinkScreenDetails';
 
 function App() {
   return (
@@ -15,10 +16,10 @@ function App() {
       <Route exact path="/" component={ Login } />
       <Route exact path="/foods" component={ MealsScreen } />
       <Route exact path="/drinks" component={ DrinksScreen } />
-      <Route exact path="/foods/:id" component={ MealScreenDetails } />
-      <Route exact path="/comidas/:id/in-progress" />
-      <Route exact path="/bebidas/:id" reen />
-      <Route exact path="/bebidas/:id/in-progress" />
+      <Route exact path="/food/:id" component={ MealScreenDetails } />
+      <Route exact path="/food/:id/in-progress" />
+      <Route exact path="/drink/:id" component={ DrinkScreenDerails } />
+      <Route exact path="/drink/:id/in-progress" />
       <Route exact path="/explorar" component={ ExploreScreen } />
       <Route exact path="/explorar/:pageType" />
       <Route

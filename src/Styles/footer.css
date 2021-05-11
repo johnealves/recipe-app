@@ -2,8 +2,8 @@
   background-color: #e76f51;
   bottom: 0;
   display: flex;
-  justify-content: space-around;
-  padding: 10px;
+  justify-content: space-between;
+  padding: 5px 25px;
   position: fixed;
   width: 100vw;
 }
